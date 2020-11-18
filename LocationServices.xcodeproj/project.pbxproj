@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		CD9B5913253BC85600341B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5912253BC85600341B38 /* AppDelegate.swift */; };
 		CD9B5915253BC85600341B38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5914253BC85600341B38 /* SceneDelegate.swift */; };
-		CD9B5917253BC85600341B38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5916253BC85600341B38 /* ViewController.swift */; };
+		CD9B5917253BC85600341B38 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5916253BC85600341B38 /* PlaceViewController.swift */; };
 		CD9B591A253BC85600341B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9B5918253BC85600341B38 /* Main.storyboard */; };
 		CD9B591C253BC85700341B38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9B591B253BC85700341B38 /* Assets.xcassets */; };
 		CD9B591F253BC85700341B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9B591D253BC85700341B38 /* LaunchScreen.storyboard */; };
 		CD9B592A253BC85700341B38 /* LocationServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5929253BC85700341B38 /* LocationServicesTests.swift */; };
 		CD9B5935253BC85700341B38 /* LocationServicesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5934253BC85700341B38 /* LocationServicesUITests.swift */; };
+		CD9B5943253BC88200341B38 /* PlaceDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5942253BC88200341B38 /* PlaceDescription.swift */; };
+		CDB558D42564C68A00FE1B53 /* PlaceLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB558D32564C68A00FE1B53 /* PlaceLibrary.swift */; };
+		CDB558D82564CB0300FE1B53 /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB558D72564CB0300FE1B53 /* LibraryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 		CD9B590F253BC85600341B38 /* LocationServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9B5912253BC85600341B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9B5914253BC85600341B38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD9B5916253BC85600341B38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD9B5916253BC85600341B38 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		CD9B5919253BC85600341B38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD9B591B253BC85700341B38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD9B591E253BC85700341B38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		CD9B5930253BC85700341B38 /* LocationServicesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationServicesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9B5934253BC85700341B38 /* LocationServicesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicesUITests.swift; sourceTree = "<group>"; };
 		CD9B5936253BC85700341B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9B5942253BC88200341B38 /* PlaceDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceDescription.swift; path = ../../PlaceDescription.swift; sourceTree = "<group>"; };
+		CDB558D32564C68A00FE1B53 /* PlaceLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLibrary.swift; sourceTree = "<group>"; };
+		CDB558D72564CB0300FE1B53 /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,16 @@
 		CD9B5911253BC85600341B38 /* LocationServices */ = {
 			isa = PBXGroup;
 			children = (
+				CD9B5942253BC88200341B38 /* PlaceDescription.swift */,
 				CD9B5912253BC85600341B38 /* AppDelegate.swift */,
 				CD9B5914253BC85600341B38 /* SceneDelegate.swift */,
-				CD9B5916253BC85600341B38 /* ViewController.swift */,
+				CD9B5916253BC85600341B38 /* PlaceViewController.swift */,
 				CD9B5918253BC85600341B38 /* Main.storyboard */,
 				CD9B591B253BC85700341B38 /* Assets.xcassets */,
 				CD9B591D253BC85700341B38 /* LaunchScreen.storyboard */,
 				CD9B5920253BC85700341B38 /* Info.plist */,
+				CDB558D32564C68A00FE1B53 /* PlaceLibrary.swift */,
+				CDB558D72564CB0300FE1B53 /* LibraryTableViewController.swift */,
 			);
 			path = LocationServices;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9B5917253BC85600341B38 /* ViewController.swift in Sources */,
+				CDB558D82564CB0300FE1B53 /* LibraryTableViewController.swift in Sources */,
+				CD9B5917253BC85600341B38 /* PlaceViewController.swift in Sources */,
 				CD9B5913253BC85600341B38 /* AppDelegate.swift in Sources */,
+				CD9B5943253BC88200341B38 /* PlaceDescription.swift in Sources */,
+				CDB558D42564C68A00FE1B53 /* PlaceLibrary.swift in Sources */,
 				CD9B5915253BC85600341B38 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
