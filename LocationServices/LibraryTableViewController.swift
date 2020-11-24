@@ -21,7 +21,7 @@ import UIKit
 
 class LibraryTableViewController: UITableViewController {
 
-    var placeLib : PlaceLibrary;
+    var placeLib = PlaceLibrary()
     
     override func viewDidLoad() {
         super.viewDidLoad()

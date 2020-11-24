@@ -27,8 +27,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func createClicked(_ sender: UIButton) {
-        let name = nameTextField.text
-        let 
+        let name = nameTextField.text ?? ""
+        let description = descriptionTextField.text ?? ""
+        let category = descriptionTextField.text ?? ""
+        let addrTitle = addrTitleTextField.text ?? ""
+        let addrStreet = addrStreetTextField.text ?? ""
+        let elevation = Float(elevationTextField.text!) ?? 0.0
+        let latitude = Float(elevationTextField.text!) ?? 0.0
+        let longitude = Float(elevationTextField.text!) ?? 0.0
+
+        if (name == "") {
+            let alert = UIAlertController(title: "Invalid Place", message: "Name field is required.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Working!!", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        model = PlaceDescription(name: name, description: description, category:  category, addrTitle: addrTitle, addrStreet: addrStreet, elevation:  elevation, latitude: latitude, longitude:  longitude)
     }
     
 }

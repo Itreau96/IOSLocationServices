@@ -23,4 +23,9 @@ class PlaceLibrary
 {
     var places : [PlaceDescription] = []
     
+    init() {
+        // TODO remove! Just for testing
+        let testItem = PlaceDescription(name: "test", description: "test desc", category: "test cat", addrTitle: "test title", addrStreet: "test street", elevation: 10.0, latitude: 1.0, longitude: 2.0)
+        places.append(testItem)
+    }
 }
