@@ -16,13 +16,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceCell" id="Mkq-QX-lFf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceCell" id="Mkq-QX-lFf" customClass="PlaceTableviewCell" customModule="LocationServices" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mkq-QX-lFf" id="lNq-MZ-ysx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9L-Fe-tXV">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="e9L-Fe-tXV" id="com-0K-ttk"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowPlace" id="w1w-W2-Lv6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Place List" id="gsW-ii-V1j">
                         <barButtonItem key="rightBarButtonItem" title="Add Place" image="plus" catalog="system" id="CnJ-TM-qAV">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="t3f-Ie-cbu"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="AddPlace" id="t3f-Ie-cbu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -45,7 +58,7 @@
         <!--Place Description Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Place Description Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="LocationServices" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Place Description Controller" id="BYZ-38-t0r" customClass="PlaceViewController" customModule="LocationServices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,15 +160,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uc-U7-mSs">
-                                <rect key="frame" x="177" y="824" width="61" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Create"/>
-                                <connections>
-                                    <action selector="createClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LyS-Mj-rpW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-2f-KQ8">
                                 <rect key="frame" x="20" y="119" width="60" height="25.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -167,19 +171,35 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nNO-mQ-s4b"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kkS-lj-bvs">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="T7H-KZ-xhH">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="sXb-1C-Xiq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="kHp-cY-VnR">
+                            <connections>
+                                <segue destination="XI4-tj-tKh" kind="unwind" unwindAction="unwindToPlaceListWithSender:" id="Vb8-4H-NdC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addrStreetTextField" destination="M1C-s4-Y75" id="MDT-MM-OJ3"/>
-                        <outlet property="addrTitleTextField" destination="v1U-DP-k5B" id="9g9-3t-np9"/>
-                        <outlet property="categoryTextField" destination="FkT-tc-t4c" id="8tg-Zg-U51"/>
-                        <outlet property="descriptionTextField" destination="KHN-gZ-W1J" id="8Cj-qL-b6S"/>
-                        <outlet property="elevationTextField" destination="tBB-cR-Vjj" id="R94-sZ-QQV"/>
-                        <outlet property="latTextField" destination="RMo-3A-h8g" id="xt8-ZW-HBL"/>
-                        <outlet property="longTextField" destination="LpP-bT-91y" id="vVf-ad-V7f"/>
-                        <outlet property="nameTextField" destination="eA5-ga-FDi" id="ee5-28-twP"/>
+                        <outlet property="addrStreetTextField" destination="M1C-s4-Y75" id="9G7-RH-YBs"/>
+                        <outlet property="addrTitleTextField" destination="v1U-DP-k5B" id="I49-5l-sbn"/>
+                        <outlet property="cancelBtn" destination="T7H-KZ-xhH" id="On7-0E-vuj"/>
+                        <outlet property="categoryTextField" destination="FkT-tc-t4c" id="83b-AU-mnt"/>
+                        <outlet property="descriptionTextField" destination="KHN-gZ-W1J" id="0J3-Uu-aqX"/>
+                        <outlet property="elevationTextField" destination="tBB-cR-Vjj" id="clg-Ny-aNO"/>
+                        <outlet property="latTextField" destination="RMo-3A-h8g" id="z3D-VY-UZh"/>
+                        <outlet property="longTextField" destination="LpP-bT-91y" id="Vn1-Re-bP4"/>
+                        <outlet property="nameTextField" destination="eA5-ga-FDi" id="eCb-4m-HK5"/>
+                        <outlet property="saveBtn" destination="kHp-cY-VnR" id="MvG-p9-B4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="XI4-tj-tKh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1398.5507246376812" y="67.633928571428569"/>
         </scene>
@@ -205,4 +225,7 @@
     <resources>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="t3f-Ie-cbu"/>
+    </inferredMetricsTieBreakers>
 </document>

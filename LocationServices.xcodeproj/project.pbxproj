@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD160A4F256F16C9005FDAD2 /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD160A4E256F16C9005FDAD2 /* ServerInfo.plist */; };
+		CD3BD3A3256DB90200B0D84D /* PlaceTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BD3A2256DB90200B0D84D /* PlaceTableviewCell.swift */; };
 		CD9B5913253BC85600341B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5912253BC85600341B38 /* AppDelegate.swift */; };
 		CD9B5915253BC85600341B38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5914253BC85600341B38 /* SceneDelegate.swift */; };
 		CD9B5917253BC85600341B38 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9B5916253BC85600341B38 /* PlaceViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD160A4E256F16C9005FDAD2 /* ServerInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
+		CD3BD3A2256DB90200B0D84D /* PlaceTableviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableviewCell.swift; sourceTree = "<group>"; };
 		CD9B590F253BC85600341B38 /* LocationServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9B5912253BC85600341B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9B5914253BC85600341B38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				CD9B5920253BC85700341B38 /* Info.plist */,
 				CDB558D32564C68A00FE1B53 /* PlaceLibrary.swift */,
 				CDB558D72564CB0300FE1B53 /* LibraryTableViewController.swift */,
+				CD3BD3A2256DB90200B0D84D /* PlaceTableviewCell.swift */,
+				CD160A4E256F16C9005FDAD2 /* ServerInfo.plist */,
 			);
 			path = LocationServices;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9B591F253BC85700341B38 /* LaunchScreen.storyboard in Resources */,
+				CD160A4F256F16C9005FDAD2 /* ServerInfo.plist in Resources */,
 				CD9B591C253BC85700341B38 /* Assets.xcassets in Resources */,
 				CD9B591A253BC85600341B38 /* Main.storyboard in Resources */,
 			);
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB558D82564CB0300FE1B53 /* LibraryTableViewController.swift in Sources */,
+				CD3BD3A3256DB90200B0D84D /* PlaceTableviewCell.swift in Sources */,
 				CD9B5917253BC85600341B38 /* PlaceViewController.swift in Sources */,
 				CD9B5913253BC85600341B38 /* AppDelegate.swift in Sources */,
 				CD9B5943253BC88200341B38 /* PlaceDescription.swift in Sources */,
